@@ -10,12 +10,18 @@ use Illuminate\Validation\Rule;
 
 class ParentIdBaseRequest extends FormRequest
 {
+    public ?File $parent = null;
+
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        $this->parent = File::query()->where('id', $this->input('parent_id'))->first();
+        if ($this->parent && !$this->parent->isOwnedBy(Auth::id())) {
+            return false;
+        }
+        return true;
     }
 
     /**

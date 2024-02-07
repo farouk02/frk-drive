@@ -5,12 +5,10 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue"
 </script>
 
 <template>
-    <Menu as="div" class="relative inline-block text-left">
+    <Menu as="div" class="relative block text-left">
         <MenuButton
             class="flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold to-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
             Create new
-
-            <ChevronDownIcon class="ml-2 -mr-1 h-5 w-5 text-gray-800" aria-hidden="true" />
         </MenuButton>
 
         <transition enter-active-class="transition duration-100 ease-out" enter-from-class="transform scale-95 opacity-0"

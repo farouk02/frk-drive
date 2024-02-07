@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFolderRequest;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class FileController extends Controller
 {
-    public function myFiles(Request $request)
+    public function myFiles()
     {
         return Inertia::render('MyFiles');
+    }
+
+    public function createFolder(StoreFolderRequest $request)
+    {
+        return;
     }
 }

@@ -3,7 +3,7 @@ import TextInput from '@/Components/TextInput.vue';
 import { useForm } from '@inertiajs/vue3';
 
 const form = useForm({
-    search:''
+    search: ''
 })
 
 </script>
@@ -11,6 +11,7 @@ const form = useForm({
 
 <template>
     <form class="w-[600px] h-[80px] flex items-center" action="">
-        <TextInput type="text" class="block w-full mr-2" v-model="form.search" autocomplete placeholder="Type to find files" />
+        <TextInput type="text" id="searchField" name="search" class="block w-full mr-2" v-model="form.search"
+            autocomplete="true" placeholder="Type to find files" />
     </form>
 </template>

@@ -1,6 +1,14 @@
 <script setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue"
+import CreateFolderModal from './CreateFolderModal.vue';
+import { ref } from 'vue';
+
+const createFolderModal = ref(false);
+
+function showCreateNewFolderModal() {
+    createFolderModal.value = true
+}
 </script>
 
 <template>
@@ -17,10 +25,10 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue"
                 class="absolute right-0 mt-2 w-full origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                 <div class="px-1 py-1">
                     <MenuItem v-slot="{ active }">
-                    <ResponsiveNavLink :href="route('profile.edit')"
+                    <a href="#" @click.prevent="showCreateNewFolderModal"
                         :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
                         New folder
-                    </ResponsiveNavLink>
+                    </a>
                     </MenuItem>
                     <MenuItem v-slot="{ active }">
                     <ResponsiveNavLink :href="route('logout')" method="post" as="button"
@@ -38,4 +46,5 @@ import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue"
             </MenuItems>
         </transition>
     </Menu>
+    <CreateFolderModal v-model="createFolderModal" />
 </template>

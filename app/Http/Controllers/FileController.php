@@ -27,12 +27,10 @@ class FileController extends Controller
         $file->name = $data['name'];
 
         $parent->appendNode($file);
-        $file->parent_id = $parent->id;
-        return;
     }
 
     private function getRoot()
     {
-        return File::query()->whereIsRoot()->where('created_at', Auth::id())->firstOrFail();
+        return File::query()->whereIsRoot()->where('created_by', Auth::id())->firstOrFail();
     }
 }

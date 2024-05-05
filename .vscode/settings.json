@@ -1,0 +1,11 @@
+{
+    "intelephense.environment.documentRoot": "public/index.php",
+    "php.completion.parameters": "parentheses",
+    "php.inlayHints.types.return": "named",
+    "php.linkedEditing.variables": true,
+    "php.problems.excludeGitIgnore": true,
+    "php.format.codeStyle": "Laravel",
+    "php.format.rules.indentBraces": true,
+    "editor.autoClosingBrackets": "always",
+    "editor.formatOnType": true
+}
